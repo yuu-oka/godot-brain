@@ -26,14 +26,15 @@ const MODES: Array[Dictionary] = [
 		"name": "鬼計算",
 		"enabled": true,
 		"rule_text": "画面に次々と計算式が表示されます。\nNバック(N個前)の式の答えを覚えておき、\nテンキーで入力してください。\n\n正解するとレベルアップ、\n間違いが多いとレベルダウンします。",
+		"summary": "Nバックで計算式を覚えて答える",
 	},
-	{"id": "onimekuri", "name": "鬼めくり", "enabled": false, "rule_text": ""},
-	{"id": "oninezumi", "name": "鬼ネズミ", "enabled": false, "rule_text": ""},
-	{"id": "onirodoku", "name": "鬼朗読", "enabled": false, "rule_text": ""},
-	{"id": "onikigou", "name": "鬼記号", "enabled": false, "rule_text": ""},
-	{"id": "onicup", "name": "鬼カップ", "enabled": false, "rule_text": ""},
-	{"id": "oniblock", "name": "鬼ブロック", "enabled": false, "rule_text": ""},
-	{"id": "oniansan", "name": "鬼耳算", "enabled": false, "rule_text": ""},
+	{"id": "onimekuri", "name": "鬼めくり", "enabled": false, "rule_text": "", "summary": ""},
+	{"id": "oninezumi", "name": "鬼ネズミ", "enabled": false, "rule_text": "", "summary": ""},
+	{"id": "onirodoku", "name": "鬼朗読", "enabled": false, "rule_text": "", "summary": ""},
+	{"id": "onikigou", "name": "鬼記号", "enabled": false, "rule_text": "", "summary": ""},
+	{"id": "onicup", "name": "鬼カップ", "enabled": false, "rule_text": "", "summary": ""},
+	{"id": "oniblock", "name": "鬼ブロック", "enabled": false, "rule_text": "", "summary": ""},
+	{"id": "oniansan", "name": "鬼耳算", "enabled": false, "rule_text": "", "summary": ""},
 ]
 
 # ModeSelect画面で選ばれ、RuleExplain画面へ引き継がれる選択中モードID
