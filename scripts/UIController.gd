@@ -20,6 +20,7 @@ const CARD_SHAKE_DISTANCE: float = 10.0
 @onready var session_end_layer: Control = $SessionEndLayer
 @onready var result_label: Label = $SessionEndLayer/ResultLabel
 @onready var next_button: Button = $SessionEndLayer/NextButton
+@onready var mode_select_button: Button = $SessionEndLayer/ModeSelectButton
 
 @onready var round_timer: Timer = $RoundTimer
 @onready var timer_bar: ProgressBar = $TimerBar
@@ -43,6 +44,7 @@ func _ready() -> void:
 	round_timer.timeout.connect(_on_round_timer_timeout)
 	answer_blink_timer.timeout.connect(_on_answer_blink_timeout)
 	next_button.pressed.connect(_on_next_button_pressed)
+	mode_select_button.pressed.connect(_on_mode_select_button_pressed)
 	_start_session()
 
 
@@ -245,3 +247,7 @@ func _build_result_text(accuracy: float, change: LevelManager.LevelChange) -> St
 
 func _on_next_button_pressed() -> void:
 	_start_session()
+
+
+func _on_mode_select_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ModeSelect.tscn")
