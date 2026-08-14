@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://co5l6oed4kj1w"]
+
+[ext_resource type="Script" uid="uid://dbi8smtr7a7iv" path="res://scripts/UIController.gd" id="1_ui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stack"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.16, 0.16, 0.22, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_timerbg"]
+bg_color = Color(0.2, 0.2, 0.26, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_timerfill"]
+bg_color = Color(0.35, 0.65, 0.95, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Main" type="Control" unique_id=2004962053]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ui")
+
+[node name="Background" type="ColorRect" parent="." unique_id=551753981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.14, 1)
+
+[node name="LevelLabel" type="Label" parent="." unique_id=949990344]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.56, 1)
+theme_override_font_sizes/font_size = 20
+text = "レベル: 1バック(通常)"
+horizontal_alignment = 1
+
+[node name="PlayLayer" type="VBoxContainer" parent="." unique_id=2105370537]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.86
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StackPanel" type="PanelContainer" parent="PlayLayer" unique_id=626516461]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_stack")
+
+[node name="StackLayout" type="VBoxContainer" parent="PlayLayer/StackPanel" unique_id=896259201]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="PlayLayer/StackPanel/StackLayout" unique_id=1024723695]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.56, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LowerLabel" type="Label" parent="PlayLayer/StackPanel/StackLayout" unique_id=1766293753]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 230
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnswerRow" type="HBoxContainer" parent="PlayLayer" unique_id=1557490695]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="AnswerPrefixLabel" type="Label" parent="PlayLayer/AnswerRow" unique_id=2101971519]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "回答: "
+vertical_alignment = 1
+
+[node name="AnswerValueLabel" type="Label" parent="PlayLayer/AnswerRow" unique_id=316586985]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[node name="SessionEndLayer" type="VBoxContainer" parent="." unique_id=1303245697]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.35
+anchor_right = 0.75
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ResultLabel" type="Label" parent="SessionEndLayer" unique_id=165417055]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="SessionEndLayer" unique_id=1745938534]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "次のセッションへ"
+
+[node name="TimerBar" type="ProgressBar" parent="." unique_id=602734687]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -28.0
+offset_right = -40.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_timerbg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_timerfill")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=666649667]
+wait_time = 2.5
+one_shot = true
+
+[node name="AnswerBlinkTimer" type="Timer" parent="." unique_id=153908031]
+wait_time = 0.5
